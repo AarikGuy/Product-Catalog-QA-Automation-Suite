@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Keyboard",
+    "price": 49.99
+  },
+  {
+    "id": 2,
+    "name": "Gaming Mouse",
+    "price": 29.99
+  },
+  {
+    "id": 3,
+    "name": "Headset",
+    "price": 59.99
+  }
+]

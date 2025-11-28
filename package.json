@@ -1,0 +1,21 @@
+{
+  "name": "product-catalog-qa-automation-suite",
+  "version": "1.0.0",
+  "description": "This is a starter/learning project to help me learn more about Playwright, Load Testing, API and JSON usage in an Automation/QA Environment.\r I will create my own API's and make End-to-end tests with Playwright and do some load testing with K6. I'm creating my own API's for the sake of\r practicing load testing in an isolated environment.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1"
+  }
+}
