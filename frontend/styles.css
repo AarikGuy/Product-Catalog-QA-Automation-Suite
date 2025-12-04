@@ -1,0 +1,14 @@
+.product { 
+    border: 1px solid #ddd; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+}
+
+#products { 
+    margin-top: 20px; 
+}
+
+body { 
+    font-family: Arial; 
+    padding: 20px; 
+}

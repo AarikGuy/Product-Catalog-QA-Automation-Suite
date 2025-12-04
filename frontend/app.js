@@ -1,4 +1,5 @@
 let token = null;
+let loginToken = null;
 
 document.getElementById("login-btn").addEventListener("click", async () => {
   const username = document.getElementById("username").value;
@@ -44,3 +45,41 @@ document.getElementById("secret-btn").addEventListener("click", async () => {
   const data = await res.json();
   document.getElementById("secret-message").textContent = data.secret || data.error;
 });
+
+async function login() {
+  const username = document.getElementById("user").value;
+  const password = document.getElementById("pass").value;
+
+  const res = await fetch("http://localhost:3000/auth/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, password })
+  });
+
+  const data = await res.json();
+
+  if (data.token) {
+    loginToken = data.token;
+    document.getElementById("login-status").innerText = "Login successful ✔️";
+  } else {
+    document.getElementById("login-status").innerText = "Login failed ❌";
+  }
+}
+
+async function loadProducts() {
+  const res = await fetch("http://localhost:3000/products", {
+    headers: { "Authorization": token ? `Bearer ${token}` : "" }
+  });
+
+  const products = await res.json();
+
+  const list = document.getElementById("products");
+  list.innerHTML = "";
+
+  products.forEach(p => {
+    const div = document.createElement("div");
+    div.className = "product";
+    div.innerHTML = `<strong>${p.name}</strong><br>Price: $${p.price}`;
+    list.appendChild(div);
+  });
+}
